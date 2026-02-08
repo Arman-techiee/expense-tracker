@@ -1,16 +1,49 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive expense tracker built with React, Vite, Tailwind CSS, and React Router. Track income and expenses, manage monthly and category budgets, and review monthly summaries with data stored locally in your browser.
 
-Currently, two official plugins are available:
+## Features
+- Add, edit, and delete expense or income entries
+- Monthly snapshot with income, spending, and remaining budget
+- Budget planning page for monthly and category limits
+- Filters for search, category, type, and month
+- Local persistence via browser `localStorage`
+- Nepal currency display using `Rs`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 19 + Vite
+- Tailwind CSS
+- React Router
+- Lucide React icons
 
-## React Compiler
+## Getting Started
+1. Install dependencies.
+   ```bash
+   npm install
+   ```
+2. Start the dev server.
+   ```bash
+   npm run dev
+   ```
+3. Open the URL shown in the terminal.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
+1. `npm run dev` - start the dev server
+2. `npm run build` - build for production
+3. `npm run preview` - preview the production build
+4. `npm run lint` - run ESLint
 
-## Expanding the ESLint configuration
+## Project Structure
+- `src/App.jsx` - routes and providers
+- `src/layout/MainLayout.jsx` - app shell layout
+- `src/pages/Home.jsx` - dashboard overview
+- `src/pages/ExpensePage.jsx` - add and manage entries
+- `src/pages/BudgetPage.jsx` - monthly and category budgeting
+- `src/context/BudgetContext.jsx` - state and persistence
+- `src/hooks/useExpense.js` - context consumer
+- `src/hooks/setBudget.js` - budget helpers
+- `src/data/Category.js` - expense categories
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Notes
+- Data is stored locally in your browser. Clearing site data will reset the app.
+- Month-based stats use the current system date.
